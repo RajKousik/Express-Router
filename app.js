@@ -6,8 +6,8 @@ const cors = require("cors");
 
 const homePage = require('./home.js')
 const aboutPage = require('./about.js')
-const loginPage = require('./login.js')
-const registerPage = require('./register.js')
+// const loginPage = require('./login.js')
+// const registerPage = require('./register.js')
 const servicePage = require('./service.js')
 const middleWarePage = require('./middleWare.js')
 
@@ -25,8 +25,8 @@ app.use(express.json());
 
 app.use('/home', homePage)
 app.use('/about', aboutPage)
-app.use('/login', loginPage)
-app.use('/register', registerPage)
+// app.use('/login', loginPage)
+// app.use('/register', registerPage)
 app.use('/service', servicePage)
 app.use('/middleWare', middleWarePage)
 
