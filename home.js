@@ -40,19 +40,19 @@ const fetchData = async () => {
 //     res.send(cartoonItem);
 // })
 
-// router.get('/:id', (req, res)=>
-// {
+router.get('/:id([0-9]{1})', (req, res)=>
+{
 
-//     const searchId = Number(req.params.id);
+    const searchId = Number(req.params.id);
 
-//     const output = cartoonItem.find((item)=>
-//     {
-//         return item.id === searchId;
-//     })
+    const output = cartoonItem.find((item)=>
+    {
+        return item.id === searchId;
+    })
 
-//     output ? res.status(200).json(output) : res.status(500).json("User not Found");
+    output ? res.status(200).json(output) : res.status(500).json("User not Found");
 
-// })
+})
 
 
 router.get('/', (req, res)=>
@@ -70,7 +70,7 @@ router.get('/', (req, res)=>
         // console.log(output);
 
       output ? res.status(200).json(output) : res.status(500).json("User not Found");
-
+    // res.send("Hello from home page!")
 })
 
 module.exports = router

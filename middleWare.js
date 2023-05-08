@@ -7,6 +7,8 @@ const middleware1 = (req, res, next) =>{
     next(); 
 }
 
+
+
 router.route('/:id')
     .get(middleware1, (req, res)=>{
         // console.log(req.person);
@@ -58,3 +60,17 @@ router.param('id', (req, res, next, userIdforArrayIndex)=>{
 // })
 
 module.exports = router
+
+
+
+
+
+
+
+/*
+
+npm init -y
+npm install express
+npm install nodemon 
+
+*/
