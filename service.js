@@ -15,12 +15,13 @@ router.get('/new', (req, res)=>{
 })
 
 
-let newIndex = 2;
+// let newIndex = 2;
 
 router.post('/', (req, res)=>{
-    usersData.push({name : req.body.firstname});
-    newIndex = newIndex + 1;
-    res.redirect(`/service/${newIndex}`)        
+    services.push({serviceName:req.body.serviceName, serviceCost:req.body.serviceCost, serviceTime:req.body.serviceTime});
+    // newIndex = newIndex + 1;
+    // res.redirect(`/service/${newIndex}`) 
+    res.redirect(`/service/${services.length-1}`)       
 })
 
 
@@ -34,20 +35,51 @@ router.route('/:id')
 })
     
     
-const usersData = [
+// const usersData = [
+//     {
+//         name:"Kousik"
+//     },
+//     {
+//         name:"Akshith"
+//     },
+//     {
+//         name:"Sanjay"
+//     }
+// ]
+
+const services = [
     {
-        name:"Kousik"
+        serviceName : "Tester",
+        serviceCost : 250,
+        serviceTime : 30,
     },
     {
-        name:"Akshith"
+        serviceName : "Back End",
+        serviceCost : 300,
+        serviceTime : 20,
     },
     {
-        name:"Sanjay"
-    }
+        serviceName : "Developer",
+        serviceCost : 500,
+        serviceTime : 39,
+    },
+    {
+        serviceName : "Non Technical",
+        serviceCost : 150,
+        serviceTime : 17,
+    },
+    {
+        serviceName : "Front End",
+        serviceCost : 400,
+        serviceTime : 50,
+    },
+    
 ]
 
+module.exports = services;
+
 router.param("id", (req, res, next, userId)=>{
-    req.details = usersData[userId];
+    req.details = services[userId];
     next();
 })
 

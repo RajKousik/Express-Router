@@ -7,10 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/service" method="post"> 
-        <label for="firstname">First Name</label>
-        <input type="text" name="firstname" id="firstname">
-        <button type="submit">Submit</button>
+    <h1>Adding new Services</h1>
+    <form action="/service" method="post">
+        <label>Enter Service Name:</label>
+        <br>
+        <input type="text" id="serviceName" name="serviceName" placeholder="Service Name">
+        <br>
+        <label>Enter Service Cost:</label>
+        <br>
+        <input type="text" id="serviceCost" name="serviceCost" placeholder="Service Cost">
+        <br>
+        <label>Service Duration:</label>
+        <br>
+        <input type="text" id="serviceTime" name="serviceTime" placeholder="Service Time">
+        <br>
+        <button type="submit">Add the Service</button>
     </form>
 </body>
 </html>

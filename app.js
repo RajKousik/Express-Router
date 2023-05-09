@@ -6,8 +6,6 @@ const cors = require("cors");
 
 const homePage = require('./home.js')   //no need to mention .js
 const aboutPage = require('./about.js')
-// const loginPage = require('./login.js')
-// const registerPage = require('./register.js')
 const servicePage = require('./service.js')
 const middleWarePage = require('./middleWare.js')
 
